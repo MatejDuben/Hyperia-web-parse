@@ -36,7 +36,7 @@ class HyperiaWebScrape:
         temp.append(job_title.get_text())
         r_search_country = re.search('(?<=:).*$',str(job_data_in_paragraph[0].get_text()))
         temp.append(r_search_country.group())
-        r_search_salary = re.search('\d.+.,- €',str(job_data_in_paragraph[1].get_text()))
+        r_search_salary = re.search('\d(.*?)€',str(job_data_in_paragraph[1].get_text()))
         temp.append(r_search_salary.group())
         r_search_type = re.search('(?<=pomeru).*$',str(job_data_in_paragraph[2].get_text()))
         temp.append(r_search_type.group())
